@@ -1,0 +1,25 @@
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.load-btn {
+  margin: 0rem auto 5rem;
+  padding: 0.5rem 1.5rem;
+  font-family: inherit;
+  font-size: 2rem;
+  font-weight: 700;
+  border: none;
+  color: var(--text-color);
+  background: var(--background-secondary);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+
+  transition: background-color 0.2s ease-in;
+}
+
+.load-btn:hover,
+.load-btn:focus {
+  background-color: var(--background-hover);
+}

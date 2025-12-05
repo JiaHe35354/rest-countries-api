@@ -1,0 +1,47 @@
+.btn {
+  align-self: flex-start;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: var(--background-secondary);
+  border: none;
+  border-radius: 0.3rem;
+  line-height: 2;
+  padding: 0.4rem 3rem;
+  margin: 8rem 0;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.icon-back {
+  width: 2.4rem;
+  height: 1.8rem;
+  font-weight: light;
+}
+
+/* 1200px */
+@media only screen and (max-width: 75em) {
+  .btn {
+    margin: 4rem 0 5.6rem;
+    font-size: 1.4rem;
+  }
+}
+
+/* 580px */
+@media only screen and (max-width: 36.25em) {
+  .btn {
+    margin-bottom: 6.4rem;
+  }
+}

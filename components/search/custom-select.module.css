@@ -1,0 +1,98 @@
+.customSelect {
+  position: relative;
+  width: 20rem;
+
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.selectBtn {
+  width: 100%;
+  height: 5.6rem;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+
+  cursor: pointer;
+  outline: none;
+  padding: 0 2.4rem;
+  border-radius: 0.5rem;
+  border: none;
+  color: inherit;
+  background: var(--background-secondary);
+  box-shadow: var(--shadow);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  transition: background-color 0.2s ease-in;
+}
+
+.selectBtn:hover,
+.selectBtn:focus {
+  background-color: var(--background-hover);
+}
+
+.icon {
+  width: 0.9rem;
+  height: auto;
+}
+
+.optionsList {
+  z-index: 1000;
+  position: absolute;
+  top: 6.4rem;
+  left: 0;
+  width: 100%;
+  background: var(--background-secondary);
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+  list-style: none;
+  overflow: hidden;
+}
+
+.option {
+  padding: 0.5rem 2.4rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in;
+}
+
+.option:first-child {
+  padding-top: 1.8rem;
+}
+
+.option:last-child {
+  padding-bottom: 1.8rem;
+}
+
+.option:hover {
+  background: var(--background-hover);
+}
+
+/* 765px */
+@media only screen and (max-width: 47.8125em) {
+  .customSelect {
+    font-size: 1.2rem;
+  }
+
+  .selectBtn {
+    height: 4.8rem;
+  }
+
+  .optionsList {
+    top: 5.6rem;
+  }
+
+  .option {
+    padding: 0.3rem 2.4rem;
+  }
+
+  .option:first-child {
+    padding-top: 1.5rem;
+  }
+
+  .option:last-child {
+    padding-bottom: 1.5rem;
+  }
+}
