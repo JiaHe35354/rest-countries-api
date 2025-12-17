@@ -32,7 +32,7 @@ Users should be able to:
 ### Screenshot
 
 ![Screenshot-Home Page](./screenshot-homePage.png)
-![Screenshot-Details Page](./screenshot-details.png)
+![Screenshot-Details Page](./screenshot-detailsPage.png)
 
 ### Links
 
