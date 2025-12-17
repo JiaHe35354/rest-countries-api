@@ -12,10 +12,12 @@
 }
 
 .image-box {
+  position: relative;
   max-width: 56rem;
   aspect-ratio: 7/5;
   border-radius: 0.8rem;
   overflow: hidden;
+  box-shadow: var(--shadow);
 }
 
 .image-box img {
@@ -24,7 +26,6 @@
   object-fit: cover;
   object-position: center;
   display: block;
-  box-shadow: var(--shadow);
 }
 
 .details {

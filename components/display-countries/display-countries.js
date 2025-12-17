@@ -8,11 +8,17 @@ import LoadMoreBtn from "../button/load-more-btn";
 export default function DisplayCountries({ initialCountries }) {
   const [region, setRegion] = useState("");
   const [search, setSearch] = useState("");
-  const [visibleCount, setVisibleCount] = useState(20);
+  const [visibleCount, setVisibleCount] = useState(10);
 
-  useEffect(() => {
-    setVisibleCount(20);
-  }, [region, search]);
+  function handleSearch(value) {
+    setSearch(value);
+    setVisibleCount(10);
+  }
+
+  function handleRegion(value) {
+    setRegion(value);
+    setVisibleCount(10);
+  }
 
   const filteredCountries = initialCountries
     .filter((c) => (region === "" ? true : c.region === region))
@@ -23,12 +29,12 @@ export default function DisplayCountries({ initialCountries }) {
   const canLoadMore = visibleCount < filteredCountries.length;
 
   function loadMore() {
-    setVisibleCount((prev) => prev + 20);
+    setVisibleCount((prev) => prev + 10);
   }
 
   return (
     <>
-      <SearchFilter onSelect={setRegion} onSearch={setSearch} />
+      <SearchFilter onSelect={handleRegion} onSearch={handleSearch} />
       <CountriesList countries={visibleCountries} />
 
       {canLoadMore && <LoadMoreBtn onLoad={loadMore} />}

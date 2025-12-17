@@ -15,7 +15,7 @@ export default function CountryCard({ country }) {
             alt={`Flag of ${country.name.common}`}
             fill
             style={{ objectFit: "cover" }}
-            loading="eager"
+            priority
           />
         </div>
 

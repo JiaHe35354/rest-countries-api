@@ -10,8 +10,6 @@
   --bg-hover-dark: #546b80;
 
   --text-error: #fb2c36;
-
-  /* --shadow: 1px 1px 4px 2px rgba(128, 128, 128, 0.1); */
 }
 
 @media (prefers-color-scheme: light) {
