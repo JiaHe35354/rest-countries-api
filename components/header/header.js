@@ -10,7 +10,7 @@ export default function Header() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className={`${classes.header}`}>
+    <header className={`${classes.header}`}>
       <h1 className={classes["heading-primary"]}>Where in the world?</h1>
 
       <button className={classes["theme-btn"]} onClick={toggleTheme}>
@@ -21,6 +21,6 @@ export default function Header() {
         )}
         {theme === "dark" ? "Light Mode" : "Dark Mode"}
       </button>
-    </div>
+    </header>
   );
 }

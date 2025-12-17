@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={nunitoSans.className}>
       <body>
         <Header />
-        {children}
+        <main>{children}</main>
       </body>
     </html>
   );

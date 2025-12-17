@@ -37,7 +37,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [My solution]()
-- Live Site URL: [Live site URL]()
+- Live Site URL: [Live site URL](https://rest-countries-api-jiah.netlify.app/countries)
 
 ## My process
 
@@ -98,9 +98,15 @@ For example, when implementing the border countries feature in this project, I h
 
 ## Things I added
 
+### Load more button
+
 I decided to display only 10 countries on the home page initially to improve performance. To support this, I added a “Load more” button. Each time the button is clicked, 10 more countries are displayed until there are no more countries left to show, at which point the button disappears.
 
 This approach also improves the overall user experience by keeping the initial page load fast and the interface clean.
+
+### Theme Switcher with System Preference
+
+I enhanced the theme switcher so that it responds not only to user interaction but also to the system’s theme settings. When the system theme changes, the application updates automatically, providing a more seamless and user-friendly experience.
 
 ## Author
 
