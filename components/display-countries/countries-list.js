@@ -7,7 +7,7 @@ export default function CountriesList({ countries }) {
     <section className="container">
       <ul className={classes.cards}>
         {countries.map((country) => (
-          <CountryCard country={country} key={country.cca3} />
+          <CountryCard country={country} key={country.codes.alpha_3} />
         ))}
       </ul>
     </section>

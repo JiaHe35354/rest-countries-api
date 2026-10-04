@@ -7,17 +7,11 @@ export default async function CountryDetailPage({ params }) {
 
   const data = await fetchCountryDetail(slug);
 
-  const nativeNames = data.name.nativeName;
-  console.log(nativeNames);
-  const firstNativeName = nativeNames
-    ? Object.values(nativeNames)[0].common
-    : "N/A";
-
   return (
     <div className="container">
       <Back parent="/countries" />
 
-      <CountryDetailsPage data={data} firstNativeName={firstNativeName} />
+      <CountryDetailsPage data={data} />
     </div>
   );
 }

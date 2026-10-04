@@ -2,16 +2,19 @@ import Link from "next/link";
 
 import classes from "./country-details.module.css";
 
-export default function CountryDetailsPage({ data, firstNativeName }) {
+export default function CountryDetailsPage({ data }) {
+  const firstNativeName =
+    Object.values(data.names.native ?? {})[0]?.common ?? "N/A";
+
   return (
     <div className={classes["detail-container"]}>
       <div className={classes["country-box"]}>
         <div className={classes["image-box"]}>
-          <img src={data.flags.svg} alt={`Flag of ${data.name.common}`} />
+          <img src={data.flag.url_svg} alt={`Flag of ${data.names.common}`} />
         </div>
 
         <div className={classes.details}>
-          <h2>{data.name.common}</h2>
+          <h2>{data.names.common}</h2>
 
           <div className={classes.info}>
             <div className={classes["info-left"]}>
@@ -33,29 +36,27 @@ export default function CountryDetailsPage({ data, firstNativeName }) {
               </p>
               <p>
                 <span>Capital: </span>
-                {data.capital}
+                {data.capitals[0].name}
               </p>
             </div>
 
             <div className={classes["info-right"]}>
               <p>
                 <span>Top Level Domain: </span>
-                {data.tld}
+                {data.tlds[0]}
               </p>
               <p>
                 <span>Currencies: </span>
-                {Object.values(data.currencies)
-                  .map((currency) => currency.name)
-                  .join(" ")}
+                {data.currencies.map((currency) => currency.name).join(", ")}
               </p>
               <p className={classes.language}>
                 <span>Languages: </span>
-                {Object.values(data.languages).join(", ")}
+                {data.languages.map((lan) => lan.name).join(", ")}
               </p>
             </div>
           </div>
 
-          {data.borderCountries.length > 0 && (
+          {data.borderCountries?.length > 0 && (
             <p className={classes["border-countries"]}>
               <span>Border Countries: </span>
               <span className={classes["border-links"]}>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import SearchFilter from "../search/search-filter";
 import CountriesList from "./countries-list";
 import LoadMoreBtn from "../button/load-more-btn";
@@ -22,7 +22,7 @@ export default function DisplayCountries({ initialCountries }) {
 
   const filteredCountries = initialCountries
     .filter((c) => (region === "" ? true : c.region === region))
-    .filter((c) => c.name.common.toLowerCase().includes(search.toLowerCase()));
+    .filter((c) => c.names.common.toLowerCase().includes(search.toLowerCase()));
 
   const visibleCountries = filteredCountries.slice(0, visibleCount);
 

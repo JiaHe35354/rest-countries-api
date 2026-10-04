@@ -4,23 +4,27 @@ import classes from "./display-countries.module.css";
 
 export default function CountryCard({ country }) {
   return (
-    <li key={country.cca3} className={classes.card}>
+    <li className={classes.card}>
       <Link
-        href={`/countries/${country.cca3.toLowerCase()}`}
+        href={`/countries/${country.codes.alpha_3.toLowerCase()}`}
         className={classes.link}
       >
         <div className={classes["image-box"]}>
-          <Image
-            src={country.flags.svg}
-            alt={`Flag of ${country.name.common}`}
-            fill
-            style={{ objectFit: "cover" }}
-            priority
-          />
+          {country.flag?.url_svg ? (
+            <Image
+              src={country.flag.url_svg}
+              alt={`Flag of ${country.names.common}`}
+              fill
+              style={{ objectFit: "cover" }}
+              priority
+            />
+          ) : (
+            <span>{country.flag?.emoji ?? "🏳️"}</span>
+          )}
         </div>
 
         <div className={classes["text-box"]}>
-          <h2>{country.name.common}</h2>
+          <h2>{country.names.common}</h2>
           <p>
             <span className={classes["text-bold"]}>Population:</span>{" "}
             {country.population}
@@ -31,7 +35,7 @@ export default function CountryCard({ country }) {
           </p>
           <p>
             <span className={classes["text-bold"]}>Capital:</span>{" "}
-            {country.capital}
+            {country.capitals?.[0]?.name ?? "N/A"}
           </p>
         </div>
       </Link>
